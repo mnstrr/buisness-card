@@ -20,6 +20,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				enforce: 'pre',
+				test: /\.scss/,
+				loader: 'import-glob-loader'
+			},
+			{
 				test: /\.js$/,
 				use: [
 					{
@@ -54,7 +59,8 @@ module.exports = {
 							options: {
 								sourceMap: true
 							}
-						}
+						},
+
 					]
 				})
 			},
@@ -63,7 +69,7 @@ module.exports = {
 				use: ['html-loader']
 			},
 			{
-				test: /\.(jpg|png)$/,
+				test: /\.(jpg|png|svg)$/,
 				use: [
 					{
 						loader: 'file-loader',
