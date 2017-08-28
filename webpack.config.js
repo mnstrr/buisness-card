@@ -10,6 +10,7 @@ var extractPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
+	devtool: 'source-map',
 	entry: './src/js/app.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -34,18 +35,25 @@ module.exports = {
 				use: extractPlugin.extract({
 					use: [
 						{
-							loader: 'css-loader'
+							loader: 'css-loader',
+							options: {
+								sourceMap: true
+							}
 						},
 						{
 							loader: 'postcss-loader',
 							options: {
 								plugins: function () {
 									return [autoprefixer]
-								}
+								},
+								sourceMap: true
 							}
 						},
 						{
-							loader: 'sass-loader'
+							loader: 'sass-loader',
+							options: {
+								sourceMap: true
+							}
 						}
 					]
 				})
