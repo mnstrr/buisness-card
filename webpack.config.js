@@ -1,8 +1,9 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 var extractPlugin = new ExtractTextPlugin({
 	filename: 'main.css'
@@ -31,7 +32,22 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: extractPlugin.extract({
-					use: ['css-loader', 'sass-loader']
+					use: [
+						{
+							loader: 'css-loader'
+						},
+						{
+							loader: 'postcss-loader',
+							options: {
+								plugins: function () {
+									return [autoprefixer]
+								}
+							}
+						},
+						{
+							loader: 'sass-loader'
+						}
+					]
 				})
 			},
 			{
