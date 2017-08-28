@@ -1,0 +1,20 @@
+{
+  "name": "business-card",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Felix Winkelmann"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mnstrr/buisness-card",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "reset-css": "^2.2.1"
+  }
+}

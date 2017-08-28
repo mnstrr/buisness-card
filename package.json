@@ -2,7 +2,7 @@
   "name": "business-card",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "browserslist": [
     "> 1%",
     "ie > 9"
