@@ -1,0 +1,48 @@
+/*
+*	Mixins for text elements
+*/
+
+@import "../helpers/rem";
+@import "../variables/colors";
+
+@mixin headline {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	font-size: rem(90);
+	color: $white;
+	letter-spacing: 0;
+	line-height: 100px;
+	text-transform: uppercase;
+}
+
+@mixin subline {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: rem(30);
+	color: $grey-light;
+	letter-spacing: 0;
+	line-height: 35px;
+	text-transform: uppercase;
+}
+
+@mixin paragraph {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: rem(30);
+	color: $grey-normal;
+	letter-spacing: 0;
+	line-height: 35px;
+}
+
+@mixin paragraph-slim {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: rem(22);
+	color: $grey-normal;
+	letter-spacing: 0;
+	line-height: 29px;
+}

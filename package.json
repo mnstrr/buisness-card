@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "webpack",
     "build:prod": "webpack -p"
   },
@@ -41,7 +41,8 @@
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.3",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
     "reset-css": "^2.2.1"

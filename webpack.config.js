@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const SvgStore = require('webpack-svgstore-plugin');
+
+
 
 var extractPlugin = new ExtractTextPlugin({
 	filename: 'main.css'
@@ -59,8 +62,7 @@ module.exports = {
 							options: {
 								sourceMap: true
 							}
-						},
-
+						}
 					]
 				})
 			},
@@ -88,7 +90,17 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
 		}),
+
 		new CleanWebpackPlugin(['dist']),
-		new OpenBrowserPlugin()
+		new OpenBrowserPlugin(),
+		new SvgStore({
+			// svgo options
+			svgoOptions: {
+				plugins: [
+					{ removeTitle: true }
+				]
+			},
+			prefix: 'icon-'
+		})
 	]
 };
