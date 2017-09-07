@@ -84,6 +84,7 @@ body {
 
 .tags {
 	margin-top: rem(10);
+	white-space: nowrap;
 }
 
 .tag {
@@ -98,6 +99,8 @@ body {
 	}
 
 	&:last-child {
+		margin-right: 0;
+
 		&::after {
 			content: '';
 			display: none;
@@ -111,10 +114,11 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: 7%;
+	white-space: nowrap;
 }
 
 .linkitem {
-	margin-right: 60px;
+	margin-right: 50px;
 
 	&:last-child {
 		margin-right: 0;
