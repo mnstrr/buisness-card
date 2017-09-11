@@ -89,11 +89,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
 		}),
-
 		new CleanWebpackPlugin(['dist']),
 		new OpenBrowserPlugin(),
 		new SvgStore({
-			// svgo options
 			svgoOptions: {
 				plugins: [
 					{ removeTitle: true }

@@ -25,3 +25,4 @@ bower_components
 target
 yarn.lock
 .DS_Store
+dist
