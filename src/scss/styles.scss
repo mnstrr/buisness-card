@@ -15,6 +15,12 @@ body {
 	font-size: 100%;
 }
 
+html,
+body,
+main {
+	height: 100%;
+}
+
 ::selection {
 	color: $white;
 	background: $green;
@@ -22,17 +28,21 @@ body {
 
 .background-icon {
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 80vw;
-	height: 80vh;
+	width: 95%;
+	height: 80%;
 
+	@include bp($bp-s) {
+		top: 50%;
+		width: 80%;
+	}
 }
 
 .svg-icon {
 	fill: $grey-light;
-	transition: fill 0.2s;
+	transition: fill 0.3s;
 	margin-right: 15px;
 	width: 25px;
 	height: 25px;
@@ -43,40 +53,37 @@ body {
 	}
 
 	&.is-mail {
-		width: 35px;
-		height: 15px;
+		width: 25px;
 
 		@include bp($bp-l) {
-			width: 40px;
-			height: 20px;
+			width: 30px;
 		}
 	}
 }
 
 .container {
-	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 }
 
 .intro {
-	position: absolute;
-	top: 30vh;
-	left: 10vw;
-	bottom: 0;
-	max-width: 100%;
+	position: relative;
+	width: 100%;
+	margin: 30vh 5vw 0 5vw;
 
 	@include bp($bp-s) {
-		top: 10vw;
-		left: 5vw;
-		right: 5vw;
+		margin-top: 30vh;
 	}
 
 	@include bp($bp-m) {
-
+		margin-top: 35vh;
+		margin-left: 10vw;
 	}
 
 	@include bp($bp-l) {
-		left: calc(50% - 90px);
-		transform: translateX(-50%);
+		margin-top: 30vh;
+		margin-left: calc(50vw - 450px);
 	}
 }
 
@@ -87,23 +94,22 @@ body {
 .subline {
 	@include subline;
 
-	margin-top: rem(40);
+	margin-top: 40px;
 }
 
 .tags {
-	margin-top: rem(10);
-	white-space: nowrap;
+	margin-top: 10px;
 }
 
 .tag {
 	@include paragraph;
 
 	display: inline-block;
-	margin-right: rem(15);
+	margin-right: 8px;
 
 	&::after {
 		content: '/';
-		margin-left: 15px;
+		margin-left: 8px;
 	}
 
 	&:last-child {
@@ -114,19 +120,42 @@ body {
 			display: none;
 		}
 	}
+
+	@include bp($bp-m) {
+		margin-right: 15px;
+
+		&:after {
+			margin-left: 15px;
+		}
+	}
 }
 
 .links {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
 	position: absolute;
 	left: 0;
 	bottom: 7%;
-	white-space: nowrap;
+	width: 100%;
+
+	@include bp($bp-s) {
+		align-items: flex-start;
+		flex-wrap: nowrap;
+		width: auto;
+	}
 }
 
 .linkitem {
-	margin-right: 50px;
+	margin-bottom: 10px;
+	width: 50%;
+
+	@include bp($bp-s) {
+		margin-right: 35px;
+	}
+
+	@include bp($bp-m) {
+		margin-right: 50px;
+	}
 
 	&:last-child {
 		margin-right: 0;
@@ -142,6 +171,7 @@ body {
 	justify-content: center;
 	text-decoration: none;
 	height: 100%;
+	transition: color 0.3s;
 
 	&:hover {
 		color: $green;
@@ -151,5 +181,3 @@ body {
 		}
 	}
 }
-
-//TODO: mobile styles
