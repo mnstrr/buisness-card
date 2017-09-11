@@ -9,22 +9,47 @@
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-weight: 900;
 	font-style: normal;
-	font-size: rem(90);
 	color: $white;
 	letter-spacing: 0;
-	line-height: 100px;
 	text-transform: uppercase;
+	line-height: 1;
+
+	@include bp($bp-xs) {
+		font-size: rem(100);
+	}
+
+	@include bp($bp-s) {
+		font-size: rem(70);
+	}
+
+	@include bp($bp-m) {
+		font-size: rem(70);
+	}
+
+	@include bp($bp-l) {
+		font-size: rem(90);
+		line-height: 100px;
+	}
 }
 
 @mixin subline {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	font-style: normal;
-	font-size: rem(30);
 	color: $grey-light;
 	letter-spacing: 0;
 	line-height: 35px;
 	text-transform: uppercase;
+	line-height: 1;
+
+	@include bp($bp-m) {
+		font-size: rem(25);
+	}
+
+	@include bp($bp-l) {
+		font-size: rem(30);
+		line-height: 35px;
+	}
 }
 
 @mixin paragraph {
@@ -34,7 +59,25 @@
 	font-size: rem(30);
 	color: $grey-normal;
 	letter-spacing: 0;
-	line-height: 35px;
+	line-height: 1;
+
+	@include bp($bp-s) {
+		font-size: rem(30);
+		line-height: 35px;
+	}
+
+	@include bp($bp-m) {
+		font-size: rem(25);
+	}
+
+	@include bp($bp-m) {
+		font-size: rem(25);
+	}
+
+	@include bp($bp-l) {
+		font-size: rem(30);
+		line-height: 35px;
+	}
 }
 
 @mixin paragraph-slim {
@@ -44,5 +87,14 @@
 	font-size: rem(22);
 	color: $grey-normal;
 	letter-spacing: 0;
-	line-height: 29px;
+	line-height: 1;
+
+	@include bp($bp-m) {
+		font-size: rem(20);
+	}
+
+	@include bp($bp-l) {
+		font-size: rem(22);
+		line-height: 29px;
+	}
 }

@@ -34,25 +34,22 @@ body {
 	fill: $grey-light;
 	transition: fill 0.2s;
 	margin-right: 15px;
+	width: 25px;
+	height: 25px;
 
-	&.is-github {
+	@include bp($bp-l) {
 		width: 30px;
 		height: 30px;
 	}
 
 	&.is-mail {
-		width: 40px;
-		height: 20px;
-	}
+		width: 35px;
+		height: 15px;
 
-	&.is-linkedin {
-		width: 30px;
-		height: 30px;
-	}
-
-	&.is-xing {
-		width: 30px;
-		height: 30px;
+		@include bp($bp-l) {
+			width: 40px;
+			height: 20px;
+		}
 	}
 }
 
@@ -65,6 +62,17 @@ body {
 	top: 30vh;
 	left: 10vw;
 	bottom: 0;
+	max-width: 100%;
+
+	@include bp($bp-s) {
+		top: 10vw;
+		left: 5vw;
+		right: 5vw;
+	}
+
+	@include bp($bp-m) {
+
+	}
 
 	@include bp($bp-l) {
 		left: calc(50% - 90px);
